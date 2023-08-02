@@ -13,23 +13,12 @@ I am a PhD candidate in the Media Arts and Technology Program at the [University
 # Research Overview
 My research interests lie in the intersection between mechanics and sensory perception. My current research focuses on controlling the propagations of mechanical waves for rendering new forms of vibration feedback on touch surfaces. I use the tools I have gained from my varied academic background to engineer novel haptic devices, develop algorithms for rendering touch feedback, and design perception studies for evaluating sensations.
 
+
 # News
-July 2023 - Our paper "Rendering Dynamic Source Motion in Surface Haptics via Wave Focusing" (Reardon, Goetz, Linnander, Visell) won the Best Transactions on Haptics Short Journal Paper at the 2023 IEEE World Haptics Conference. My presentation of this paper was also nominated for Best Presentation at the conference.
 
-July 2023 - Our paper "Dynamic Feedback in Wave-Mediated Surface Haptics: A Modular Platform" (Goetz*, Reardon*, Linnander, Visell) was presented at the 2023 IEEE World Haptics Conference in Delft, Netherlands.
-
-July 2023 - Congratulations to my co-author Neeli Tummala for receiving a Best Presentation Award at the 2023 Festival of Touch for her work "Biomechanical Filtering diversifies whole-hand tactile encoding" (Tummala, Reardon, Dandu, Shao, Saal, Visell).
-
-March 2023 - Our paper "Shear Shock Waves Mediate Haptic Holography via Focused Ultrasound" (Reardon, Dandu, Shao, Visell) was published in Science Advances. Check it out on [open access](https://www.science.org/doi/10.1126/sciadv.adf2037)!
-
-March 2022 - Our paper "A Smart Bracelet Supporting Tactile Communication on Interaction" (Dinulescu, Tummala, Reardon, Dandu, Goetz, Topp, Visell) was awarded Best Technical Paper Runner Up at the 2022 IEEE Haptics Symposium.
-
-March 2022 - Our paper "Tactile Echoes: Multisensory Augmented Reality for the Finger" (Kawazoe, Reardon, Woo, Di Luca, Visell) was awarded Best Application Paper Finalist by IEEE Transactions of Haptics.
-
-March 2022 - The conference I helped organize as Web Chair went extremely well! Congratulations to all involved! You can find the archived livestream of the 2022 IEEE Haptics Symposium on the conference website [here](https://2022.hapticssymposium.org/).
-
-March 2020 - Our paper "Elastowave: Tactile Haptic Feedback in a Soft Haptic Interface" (Reardon, Kastor, Shao, Visell) won Best Technical Paper at the 2020 IEEE Haptics Symposium. My presentation of this paper was also awarded Best Presentation Honorable Mention at the conference.
-
+<div style="height:500px;width:100%$; border:0px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+{% include_relative news.html %}
+</div>
 
 <!--
 March 2022 - Smart Bracelet

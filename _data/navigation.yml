@@ -3,12 +3,12 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Random Cool Things"
-    url: /things/
-  
   - title: "Collaborators"
     url: /collabs/
 
+  - title: "Random Cool Things"
+    url: /things/
+  
 #  - title: "Talks"
 #    url: /talks/    
 

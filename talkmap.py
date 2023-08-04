@@ -14,6 +14,7 @@
 import glob
 import getorg
 from geopy import Nominatim
+from time import sleep
 
 g = glob.glob("*.md")
 
@@ -36,11 +37,24 @@ for file in g:
                             
            
         location_dict[location] = geocoder.geocode(location)
+        sleep(1)
         print(location, "\n", location_dict[location])
 
 
-m = getorg.orgmap.create_map_obj()
-getorg.orgmap.output_html_cluster_map(location_dict, folder_name="../talkmap", hashed_usernames=False)
+f = open("../test.js", "w")
+f.write("var address points = [")
+temp = ""
+for key in location_dict:
+    a = location_dict[key]
+    print(a[0])
+    temp = key
+    #+ "{}".format(a[0].encode('utf-8'))
+    f.write(temp)
+f.write("];")
+f.close()
+
+# m = getorg.orgmap.create_map_obj()
+# getorg.orgmap.output_html_cluster_map(location_dict, folder_name="../talkmap", hashed_usernames=False)
 
 
 

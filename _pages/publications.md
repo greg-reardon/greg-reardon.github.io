@@ -12,5 +12,5 @@ author_profile: true
 {% include base_path %}
 
 {% for post in site.publications reversed %}
-  {% include reardon/reardon_pubLayout.html %}
+  {% include reardon/reardon_pub.html %}
 {% endfor %}

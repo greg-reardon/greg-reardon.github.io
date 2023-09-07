@@ -1,1 +1,0 @@
-var address points = [New York, New YorkSanta Barbara, CaliforniaBristol, England

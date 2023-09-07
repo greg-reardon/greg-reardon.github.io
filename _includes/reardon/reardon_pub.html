@@ -12,6 +12,20 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.bestPaper == 1 and post.otherAward == 1 %}
+<div style="position:absolute; bottom:85%; right:97%">
+  🏆🏅
+</div>
+{% elsif post.bestPaper == 1 and post.otherAward == 0 %}
+<div style="position:absolute; bottom:92%; right:97%">
+  🏆
+</div>
+{% elsif post.otherAward == 1 and post.bestPaper == 0 %}
+<div style="position:absolute; bottom:92%; right:97%">
+  🏅
+</div>
+{% endif %}
+
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -26,29 +40,27 @@
       </div>
     {% endif %}
 
-    <!-- TODO: Graphic for Award Winner-->
-    <h2 class="archive__item-title" itemprop="headline">
+    <div class="archive__item-title" style="flex-shrink:1; text-align: center; justify-content:center; display:flex; width:100%; font-size: 18px" itemprop="headline">
+      <!--
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-
-
-
-    <p style="margin-top:0">
-      {{post.authors}} (2023)<br><i>{{post.venue}}</i>
-    </p>
-
-    <p><a href=" {{ post.paperurl }} ">Paper Link</a></p>
-
-    <!-- TODO: Flex box for image-->
+      -->
+      <!--{% else %}-->
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      <!--{% endif %}-->
+    </div>
+    
     {% if post.coverImage %}
-    <p>
-      <img src="{{ post.coverImage }}" height="200px" width="200px" alt="Markdown Monster icon" style="float: center" />
-    </p>
+    <div style="justify-content:center; max-height:200px; align-items:center; display:flex; margin-top: 15px; margin-bottom: 10px">
+      <img src="{{ post.coverImage }}" alt="Feature Image" style="float: center; max-height:200px; text-align:center; display: block; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto; height: auto; width: auto; box-shadow: 0 0 4px 1px rgb(100,100,100);" />
+    </div>
     {% endif %}
+
+    
+    <div style="display:flex; flex-shrink:4; flex-direction: column; width:100%; margin-bottom:0; font-size: 16px">
+      <div>{{post.shortAuthors}} ({{post.year}})</div>
+      <div><i>{{post.venue}}</i></div>
+    </div>
 
 
 <!-- 

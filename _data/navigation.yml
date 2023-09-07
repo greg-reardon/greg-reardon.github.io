@@ -6,8 +6,8 @@ main:
   - title: "Collaborators"
     url: /collabs/
 
-  - title: "Random Cool Things"
-    url: /things/
+#  - title: "Random Cool Things"
+#    url: /things/
   
 #  - title: "Talks"
 #    url: /talks/    

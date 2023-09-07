@@ -9,7 +9,7 @@ I have had the pleasure of working with many talented researchers from across th
 
 
 {% if site.talkmap_link == true %}
-<iframe src="/talkmap/map.html" height="425" width="625" style="border:none; bottom-margin:0"></iframe>
+<iframe src="/talkmap/map.html" height="425" width="700" style="border:none; bottom-margin:0"></iframe>
 {% endif %}
 <!--
 Inject the talk map code to generate collaborator network

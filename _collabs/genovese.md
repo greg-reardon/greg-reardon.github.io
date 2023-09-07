@@ -1,6 +1,6 @@
 ---
 name: Andrea Genovese
-affiliation: New York University
+affiliation: Qualcomm
 location: "New York, New York"
 website: https://andreagenovese.com/
 ---

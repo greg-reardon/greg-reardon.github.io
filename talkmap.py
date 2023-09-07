@@ -13,18 +13,30 @@
 
 import glob
 import getorg
+#import geopy
 from geopy import Nominatim
 from time import sleep
+from geopy.exc import GeocoderTimedOut
+
+def do_geocode(address, geocoder, attempt=1, max_attempts=5):
+    try:
+        return geocoder.geocode(address)
+        sleep(1)
+    except GeocoderTimedOut:
+        if attempt <= max_attempts:
+            return do_geocode(address, geocoder, attempt=attempt+1)
+        raise
 
 g = glob.glob("*.md")
 
 
 geocoder = Nominatim()
 location_dict = {}
-location = ""
+locations = []
+uniqueLocations = []
+#location = ""
 permalink = ""
 title = ""
-
 
 for file in g:
     with open(file, 'r') as f:
@@ -33,24 +45,33 @@ for file in g:
             loc_start = lines.find('location: "') + 11
             lines_trim = lines[loc_start:]
             loc_end = lines_trim.find('"')
-            location = lines_trim[:loc_end]
+            locations.append(lines_trim[:loc_end])
                             
-           
-        location_dict[location] = geocoder.geocode(location)
-        sleep(1)
-        print(location, "\n", location_dict[location])
+          
+        #location_dict[location] = geocoder.geocode(location)
+        #sleep(1)
+        #print(location, "\n", location_dict[location])
+        #break
 
+#get only unique locs in list and coordinates
+uniqueLocations = list(set(locations))
+for loc in uniqueLocations:
+    #location_dict[loc] = geocoder.geocode(loc)
+    #sleep(2)
+    location_dict[loc] = do_geocode(loc, geocoder)
+    sleep(1.1)
+    #location_dict[loc] = 2
+    print(loc, "\n", location_dict[loc])
 
-f = open("../test.js", "w")
-f.write("var address points = [")
-temp = ""
-for key in location_dict:
-    a = location_dict[key]
-    print(a[0])
-    temp = key
-    #+ "{}".format(a[0].encode('utf-8'))
-    f.write(temp)
-f.write("];")
+#write all locations and coordinates to .js file
+f = open("../talkmap/org-locations.js", "w")
+output = 'var addressPoints = ['
+temp = ''
+for key in locations:
+    loc = location_dict[key]
+    temp = ' [ "' + key + '", ' + str(loc.latitude) + ', ' + str(loc.longitude) + ' ], '
+    output = output + temp
+f.write(output + '];')
 f.close()
 
 # m = getorg.orgmap.create_map_obj()

@@ -3,15 +3,24 @@ permalink: /
 title: ""
 excerpt: "About me"
 author_profile: true
+cvLink: "../papers/Reardon_CV.pdf"
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-I am a PhD candidate in the Media Arts and Technology Program at the [University of California, Santa Barbara](https://www.ucsb.edu/) working in the field of haptics at [RE Touch Lab](http://www.re-touch-lab.com/) under the supervision of Dr. Yon Visell. Prior to working on haptics, I worked on spatial audio in the [Music and Auditory Research Lab](https://steinhardt.nyu.edu/marl) at [New York University](https://www.nyu.edu/) where I received a M.Mus. in Music Technology in 2018. I received my B.S. in Applied Mathematics-Economics from [Brown University](https://www.brown.edu/) in 2016.
+{% include base_path %}
+
+I am a PhD candidate in the Media Arts and Technology Program at the [University of California, Santa Barbara](https://www.ucsb.edu/). I work in the field of haptics at the [RE Touch Lab](http://www.re-touch-lab.com/) under the supervision of Dr. Yon Visell. My work and work I have collaborated on have won 4 best paper awards and nominations at premiere IEEE venues, spanning research on wearable assistive devies for individuals who are deaf-blind, augmented reality touch interfaces, and surface haptic displays.
+
+Prior to working on haptics, I worked on spatial audio in the [Music and Auditory Research Lab](https://steinhardt.nyu.edu/marl) at [New York University](https://www.nyu.edu/) where I received a M.Mus. in Music Technology in 2018. I received my B.S. in Applied Mathematics-Economics from [Brown University](https://www.brown.edu/) in 2016.
 
 # Research Overview
-My research interests lie in the intersection between mechanics and sensory perception. My current research focuses on controlling the propagations of mechanical waves for rendering new forms of vibration feedback on touch surfaces. I use the tools I have gained from my varied academic background to engineer novel haptic devices, develop algorithms for rendering touch feedback, and design perception studies for evaluating sensations.
+My research interests lie in the intersection between mechanics and sensory perception. My current research focuses on controlling the propagation of mechanical waves for rendering new forms of vibration feedback on touch surfaces. I use the tools I have gained from my varied academic background to engineer novel haptic devices, develop algorithms for rendering touch feedback, and design perception studies for evaluating sensations.
+
+<p>
+<img src="../images/user/flashingArrowGif.gif" style="height:20px"> <a href="{{ page.cvLink }}" download>Click here to download my CV</a> <img src="../images/user/flashingArrowGif.gif" style="height:20px; transform: rotate(180deg)">
+</p>
 
 
 # News

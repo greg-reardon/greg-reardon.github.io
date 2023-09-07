@@ -61,7 +61,7 @@ layout: default
           <img src="../images/user/flashingArrowGif.gif" style="height:20px">&nbsp<a href="{{ page.downloadLink }}" download>Click here for download</a>&nbsp<img src="../images/user/flashingArrowGif.gif" style="height:20px; transform: rotate(180deg)">
         {% endif %}
         {% if page.paperurl %}        
-        &nbsp or you can find it online <a href="{{ page.paperurl }}">here</a>. 
+        &nbsp or you can find it online <a href="{{ page.paperurl }}" target="_blank">here</a>. 
         {% endif %}       
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

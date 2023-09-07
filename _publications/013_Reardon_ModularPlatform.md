@@ -4,7 +4,7 @@ authors: 'Gregory Reardon*, Dustin Goetz*, Max Linnander, and Yon Visell'
 shortAuthors: Reardon*, Goetz*, Linnander, Visell
 venue: 'IEEE World Haptics Conference'
 year: 2023
-#paperurl: 'https://ieeexplore.ieee.org/document/10126130'
+paperurl: 'https://ieeexplore.ieee.org/document/10224368'
 coverImage: '../images/user/Reardon_ModularPlatform.png'
 collection: publications
 permalink: /publication/013_Reardon_ModularPlatform

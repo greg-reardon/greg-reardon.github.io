@@ -23,6 +23,6 @@ googlescholar: https://scholar.google.com/citations?hl=en&user=VEdujacAAAAJ
 </div>
 
 {% if page.googlescholar %}
-  You can also find my publications on <a href="{{ page.googlescholar }}">my Google Scholar profile</a>.
+  You can also find my publications on <a href="{{ page.googlescholar }}" target="_blank">my Google Scholar profile</a>.
 {% endif %}
 

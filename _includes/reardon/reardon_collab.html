@@ -28,7 +28,7 @@
 
     <p>
         {% if post.website %}
-            <a href="{{ post.website }}">{{ post.name }}</a>
+            <a href="{{ post.website }}" target="_blank">{{ post.name }}</a>
         {% else %}
             {{ post.name }}
         {% endif %}

@@ -1,6 +1,6 @@
 ---
 name: Neeli Tummala
-affiliation: University of California, Santa Barbara
-location: "Santa Barbara, California"
+affiliation: University of Chicago
+location: "Chicago, Illinois"
 website: http://www.neelitummala.com
 ---

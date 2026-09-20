@@ -11,12 +11,33 @@ redirect_from:
 
 {% include base_path %}
 
-I am a Ph.D. candidate in the Media Arts and Technology Program at the University of California, Santa Barbara. I conduct research on new frontiers in haptics in the [RE Touch Lab](http://www.re-touch-lab.com/), directed by Prof. Yon Visell. Publications by me and my colleagues have received several accolades, including two best paper awards for research on wave-mediated haptics (IEEE Haptics Symposium, 2020; IEEE World Haptics Conference, 2023), an honorable mention for research on wearable technologies for tactile sign language (IEEE Haptics Symposium, 2022), and an honorable mention for research on tactile augmented reality technologies (IEEE Transactions on Haptics, 2022).
+I am a postdoctoral researcher in the Mechanical Engineering Department at Northwestern University, working with [Profs. J. Edward Colgate and Michael Peshkin](https://sites.northwestern.edu/hapticsgroup/). My research centers on developing innovative sensing and actuation devices for haptics, human-computer interaction, and robotics. By tackling interdisciplinary challenges at the intersection of mechanics, computation, and sensory perception, I aim to advance the next generation of interactive technologies. Publications by my coauthors and I have received several accolades, including two best paper awards for research on wave focusing for multi-touch feedback (\textit{IEEE Haptics Symposium}, 2020; \textit{IEEE World Haptics Conference}, 2023), a best paper award for research on data-driven modeling of tissue dynamics (\textit{IEEE Haptics Symposium} 2024), a best paper honorable mention for research on wearable technologies for tactile sign language (\textit{IEEE Haptics Symposium}, 2022), and a best paper honorable mention for research on tactile augmented reality technologies (\textit{IEEE Transactions on Haptics}, 2022). My research has also been featured in top interdisciplinaray journals such as Science Robotics and Science Advances, and my dissertation work that I completed at the University of California, Santa Barbara, under [Prof. Yon Visell](http://www.re-touch-lab.com/) was internationally recognized by the EuroHaptics Society as the Best PhD Thesis in the field of haptics for the year of 2024. Priorr to working in the field of haptics, I contributed to research on spatial audio rendering, perception, and evaluation at the [Music and Auditory Research Lab](https://steinhardt.nyu.edu/marl) at New York University where I received a Master's degree in Music Technology.
 
+
+
+
+
+<!--
 Prior to working on haptics, I worked on spatial audio in the [Music and Auditory Research Lab](https://steinhardt.nyu.edu/marl) at New York University where I received a M.Mus. in Music Technology in 2018. I received my B.S. in Applied Mathematics-Economics from Brown University in 2016.
+
+I conduct research on new frontiers in tactile sensing, haptics, and robotics under the advising of [Profs. J. Edward Colgate and Michael Peshkin](https://sites.northwestern.edu/hapticsgroup/).
+
+ My dissertation research on spatially distributed haptic feedback has also been internationally recognized by the EuroHaptics Society as the Best PhD Thesis in the field of haptics for the year of 2024.
+
+Publications by me and my coauthors have received several accolades, including three best paper awards on topics ranging from wave field control for multi-touch haptic feedback and a software toolbox for predicting vibrations in the hand and upper limb, and two best paper honorable mentions on wearable technologies for decoding tactile sign language and for augmenting natural touch interactions. My research has also been featured in top interdisciplinaray journals such as Science Robotics and Science Advances. My dissertation research, which I completed at the University of California, Santa Barbara under the guidance of Prof. Yon Visell was inter
+
+including two best paper awards for research on wave-mediated haptics (IEEE Haptics Symposium, 2020; IEEE World Haptics Conference, 2023), an honorable mention for research on wearable technologies for tactile sign language (IEEE Haptics Symposium, 2022), and an honorable mention for research on tactile augmented reality technologies (IEEE Transactions on Haptics, 2022).
+
+I am a Ph.D. candidate in the Media Arts and Technology Program at the University of California, Santa Barbara. I conduct research on new frontiers in haptics in the [RE Touch Lab](http://www.re-touch-lab.com/), directed by Prof. Yon Visell.
+
+I have contributed to academic research on the auditory and haptic senses to inform the design of interactive media technologies. My research on audition includes contributions to 3D audio rendering, perception, and evaluation. In haptics, my research contributions include designing novel devices for haptic feedback and sensing, proposing new paradigms for programmable surface haptic displays based on wave transport, and elucidating fundamental constraints for haptic rendering due to viscoelastic tissue dynamics. Currently, my primary research focus is on designing novel, low complexity tomographic tactile sensors using ultrasound. Publications by my coauthors and I have received several accolades, including two best paper awards for research on wave-mediated haptics (\textit{IEEE Haptics Symposium}, 2020; \textit{IEEE World Haptics Conference}, 2023), a best paper award for research on data-driven modeling of tissue dynamics (\textit{IEEE Haptics Symposium} 2024), an honorable mention for research on wearable technologies for tactile sign language (\textit{IEEE Haptics Symposium}, 2022), and an honorable mention for research on tactile augmented reality technologies (\textit{IEEE Transactions on Haptics}, 2022). My dissertation research on spatially distributed haptic feedback has also been internationally recognized by the EuroHaptics Society as the Best PhD Thesis in the field of haptics for the year of 2024.
 
 # Research Overview
 My research interests include haptic science and engineering at the intersection of mechanics, computation, and perception. My current research focuses on controlling the propagation of mechanical waves for rendering new forms of vibration feedback on touch surfaces. I use the tools I have gained from my varied academic background to engineer novel haptic devices, develop algorithms for rendering touch feedback, and design perception studies for evaluating sensations.
+
+
+-->
+
 
 <p>
 <img src="../images/user/flashingArrowGif.gif" style="height:20px"> <a href="{{ page.cvLink }}" download>Click here to download my CV</a> <img src="../images/user/flashingArrowGif.gif" style="height:20px; transform: rotate(180deg)">

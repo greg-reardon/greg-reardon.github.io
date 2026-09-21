@@ -8,7 +8,7 @@ paperurl: 'https://www.aes.org/e-lib/online/browse.cfm?elib=19699'
 coverImage: '../images/user/Genovese_HRTFs.png'
 collection: publications
 permalink: /publication/005_Genovese_HRTFs
-show: true
+show: false
 downloadLink: '../papers/Genovese_HRTFs.pdf'
 ---
 

@@ -8,7 +8,7 @@ paperurl: 'https://www.aes.org/e-lib/browse.cfm?elib=19694'
 coverImage: '../images/user/Reardon_SQA.png'
 collection: publications
 permalink: /publication/004_Reardon_BinauralRenderers_SQA
-show: true
+show: false
 downloadLink: '../papers/Reardon_SQA.pdf'
 ---
 

@@ -83,12 +83,12 @@ analytics:
 author:
   name             : "Gregory Reardon"
   avatar           : "user/Reardon_websiteProfile.jpg"
-  bio              : "Ph.D. Candidate at University of California, Santa Barbara"
+  bio              : "Postdoctoral Scholar at Northwestern University"
   location         : #"University of California, Santa Barbara"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=VEdujacAAAAJ"
-  email            : reardon@ucsb.edu
+  googlescholar    : "https://scholar.google.com/citations?user=JQDPQpkAAAAJ&hl=en"
+  email            : gregory.reardon@northwestern.edu
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :

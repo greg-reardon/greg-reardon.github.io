@@ -18,11 +18,36 @@ See more info at https://academicpages.github.io/
 
 ## To run locally (not on GitHub Pages, to serve on your own computer)
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+On Windows, install Ruby 3.3 with DevKit:
+
+```powershell
+winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 --exact --source winget
+```
+
+Open a new terminal after installation so Ruby is on `PATH`. If the native build
+tools were not installed, run `ridk install` and select option 3 (MSYS2 and MINGW
+development toolchain). See [Jekyll's Windows setup guide](https://jekyllrb.com/docs/installation/windows/).
+
+From the repository directory, install the dependencies:
+
+```powershell
+gem install bundler -v 2.4.17 --no-document
+bundle _2.4.17_ config set --local path vendor/bundle
+bundle _2.4.17_ install
+```
+
+Start the local site:
+
+```powershell
+bundle _2.4.17_ exec jekyll serve --config _config.yml,_config.dev.yml --host 127.0.0.1 --force_polling
+```
+
+Open <http://localhost:4000>. Jekyll rebuilds when content changes; refresh the
+browser to see updates. Polling avoids the obsolete Windows `wdm` extension.
+Restart the server after changing configuration files.
+Press Ctrl+C to stop it. The development configuration uses local links and
+disables analytics. Keep `Gemfile.lock` so local installs use the same dependency
+versions.
 
 # Changelog -- bugfixes and enhancements
 

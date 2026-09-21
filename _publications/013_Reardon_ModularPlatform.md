@@ -8,7 +8,7 @@ paperurl: 'https://ieeexplore.ieee.org/document/10224368'
 coverImage: '../images/user/Reardon_ModularPlatform.png'
 collection: publications
 permalink: /publication/013_Reardon_ModularPlatform
-show: true
+show: false
 downloadLink: '../papers/Reardon_ModularPlatform.pdf'
 ---
 

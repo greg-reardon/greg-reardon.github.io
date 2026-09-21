@@ -11,12 +11,16 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
+# Jekyll 3.9's LogAdapter requires Logger's pre-1.6 implementation.
+gem "logger", "~> 1.5.0"
+
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# Use `jekyll serve --force_polling` on Windows; the old wdm extension
+# does not compile with current RubyInstaller build tools.
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

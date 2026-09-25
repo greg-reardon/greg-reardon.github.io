@@ -49,6 +49,21 @@ Press Ctrl+C to stop it. The development configuration uses local links and
 disables analytics. Keep `Gemfile.lock` so local installs use the same dependency
 versions.
 
+## Publication websites
+
+To link a publication to its project website or web app, add these optional fields
+to the front matter in its `_publications/*.md` file:
+
+```yaml
+websiteUrl: 'https://example.com/project/'
+websiteLabel: 'Open web app'
+```
+
+The link appears after the abstract, before any download prompt, and opens in a
+new tab. Use any descriptive label, such as `Project website & installation`.
+If `websiteLabel` is missing or blank, the label defaults to `Project website`.
+If `websiteUrl` is missing or blank, no website link appears.
+
 # Changelog -- bugfixes and enhancements
 
 There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 

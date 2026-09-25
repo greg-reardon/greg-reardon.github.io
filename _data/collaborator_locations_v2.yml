@@ -1,0 +1,21 @@
+# Keys must match the location field in _collabs/*.md.
+# Coordinates describe cities, not individual offices.
+# Existing city coordinates are retained from talkmap/org-locations.js.
+"Birmingham, England": [52.4796992, -1.9026911]
+"Bristol, England": [51.4538022, -2.5972985]
+"New York, New York": [40.7127281, -74.0060152]
+"San Francisco, California": [37.7790262, -122.419906]
+"Santa Barbara, California": [34.4221319, -119.702667]
+"Sheffield, England": [53.3806626, -1.4702278]
+"Shenzhen, China": [22.5445741, 114.0545429]
+"Sydney, Australia": [-33.8698439, 151.2082848]
+"Tsukuba, Japan": [36.0833265, 140.077279]
+
+# https://www.geonames.org/advanced-search.html?q=Chicago%2C+IL
+"Chicago, Illinois": [41.85003, -87.65005]
+# https://www.geonames.org/search.html?country=NL&q=
+"Enschede, Netherlands": [52.218333, 6.895833]
+# https://www.wikidata.org/wiki/Q462799 (42°2'50"N, 87°41'6"W)
+"Evanston, Illinois": [42.047222, -87.685]
+# https://www.wikidata.org/wiki/Q13375 (43°43'N, 10°24'E)
+"Pisa, Italy": [43.716667, 10.4]

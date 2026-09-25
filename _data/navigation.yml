@@ -1,10 +1,10 @@
 # main links links
 main:
   - title: "Publications"
-    url: /publications/
+    url: /publications_v2/
 
   - title: "Collaborators"
-    url: /collabs/
+    url: /collabs_v2/
 
 #  - title: "Random Cool Things"
 #    url: /things/

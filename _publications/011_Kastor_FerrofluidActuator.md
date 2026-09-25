@@ -1,6 +1,6 @@
 ---
 title: "Ferrofluid Electromagnetic Actuators for High-Fidelity Haptic Feedback"
-authors: 'Nikolas Kastor, Bharat Dandu, Vedad Bassari, Gregory Reardon, Yon Visell'
+authors: 'Nikolas Kastor*, Bharat Dandu*, Vedad Bassari, Gregory Reardon, Yon Visell'
 shortAuthors: Kastor, Dandu, Bassari, Reardon, Visell
 venue: 'Sensory and Actuators A: Physical'
 year: 2023

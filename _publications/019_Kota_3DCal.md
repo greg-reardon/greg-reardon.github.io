@@ -12,6 +12,8 @@ bestPaper: 0
 otherAward: 0
 show: true
 downloadLink: ''
+websiteUrl: 'https://rohankotanu.github.io/3DCal/'
+websiteLabel: 'Check out the project website to get started!'
 ---
 
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Collaborator map v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.css">
+  <link rel="stylesheet" href="leaflet_dist/MarkerCluster.css">
+  <link rel="stylesheet" href="leaflet_dist/MarkerCluster.Default.css">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { display: flex; flex-direction: column; font: 14px/1.4 Arial, sans-serif; }
+    #map { flex: 1; min-height: 0; width: 100%; }
+    .collaborator-popup strong { display: block; margin-bottom: 4px; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.js"></script>
+  <script src="leaflet_dist/leaflet.markercluster-src.js"></script>
+  <script src="org-locations_v2.js"></script>
+</head>
+<body>
+  <div id="map" role="region" aria-label="Collaborator locations"></div>
+  <script>
+    var tiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18,
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012; city coordinates include <a href="https://www.geonames.org/">GeoNames</a>'
+    });
+    var map = L.map('map', {center: [20, 0], zoom: 2, layers: [tiles]});
+    map.attributionControl.setPrefix(false);
+    var markers = L.markerClusterGroup({
+      showCoverageOnHover: false,
+      maxClusterRadius: 80,
+      spiderfyOnMaxZoom: true
+    });
+
+    collaboratorPointsV2.forEach(function (person) {
+      var coordinates = person.coordinates;
+      if (!Array.isArray(coordinates) || coordinates.length !== 2 ||
+          typeof coordinates[0] !== 'number' || typeof coordinates[1] !== 'number' ||
+          !isFinite(coordinates[0]) || !isFinite(coordinates[1]) ||
+          Math.abs(coordinates[0]) > 90 || Math.abs(coordinates[1]) > 180) {
+        console.warn('No valid map coordinates for ' + person.name + ': ' + person.location +
+          '. Add this city to _data/collaborator_locations_v2.yml.');
+        return;
+      }
+
+      var popup = document.createElement('div');
+      popup.className = 'collaborator-popup';
+      var heading = document.createElement('strong');
+      if (/^https?:\/\//i.test(person.website)) {
+        var link = document.createElement('a');
+        link.href = person.website;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = person.name;
+        heading.appendChild(link);
+      } else {
+        heading.textContent = person.name;
+      }
+      popup.appendChild(heading);
+      [person.affiliation, person.location].forEach(function (text) {
+        if (text) {
+          var line = document.createElement('div');
+          line.textContent = text;
+          popup.appendChild(line);
+        }
+      });
+
+      L.marker(coordinates, {title: person.name, alt: person.name})
+        .bindPopup(popup)
+        .addTo(markers);
+    });
+
+    map.addLayer(markers);
+    if (markers.getLayers().length) {
+      map.fitBounds(markers.getBounds(), {padding: [25, 25], maxZoom: 6, animate: false});
+    }
+  </script>
+</body>
+</html>

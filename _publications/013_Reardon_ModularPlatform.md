@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Feedback in Wave-Mediated Surface Haptics: A Modular Platform"
-authors: 'Gregory Reardon*, Dustin Goetz*, Max Linnander, and Yon Visell'
+authors: ' Dustin Goetz*, Gregory Reardon*, Max Linnander, and Yon Visell'
 shortAuthors: Reardon*, Goetz*, Linnander, Visell
 venue: 'IEEE World Haptics Conference'
 year: 2023

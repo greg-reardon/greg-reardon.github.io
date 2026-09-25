@@ -4,6 +4,13 @@ layout: default
 
 {% include base_path %}
 
+{% assign paper_url = page.paperurl | default: '' | strip %}
+{% assign download_url = page.downloadLink | default: '' | strip %}
+{% assign cover_image = page.coverImage | default: '' | strip %}
+{% assign awards = page.awards | default: '' | strip %}
+{% assign website_url = page.websiteUrl | default: '' | strip %}
+{% assign website_label = page.websiteLabel | default: '' | strip | default: 'Project website' %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
@@ -26,7 +33,15 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.title %}
+          <h1 class="page__title" itemprop="headline">
+            {% if paper_url != '' %}
+              <a href="{{ paper_url | escape }}" target="_blank" rel="noopener">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+            {% else %}
+              {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
+            {% endif %}
+          </h1>
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
@@ -55,14 +70,25 @@ layout: default
 
       <section class="page__content" itemprop="text">
 
+        {% if awards != '' %}
+          <div class="publication-awards">{{ awards | markdownify }}</div>
+        {% endif %}
+
+        {% if cover_image != '' %}
+          <div class="publication-cover" style="display:flex; justify-content:center; max-width:600px; margin:1.5em auto">
+            <img src="{{ cover_image | escape }}" alt="{{ page.coverImageAlt | default: page.title | strip_html | escape }}" style="display:block; width:auto; height:auto; max-width:100%; max-height:350px">
+          </div>
+        {% endif %}
+
         {{ content }}
 
-        {% if page.downloadLink %}
-          <img src="../images/user/flashingArrowGif.gif" style="height:20px">&nbsp<a href="{{ page.downloadLink }}" download>Click here for download</a>&nbsp<img src="../images/user/flashingArrowGif.gif" style="height:20px; transform: rotate(180deg)">
+        {% if website_url != '' %}
+          <p class="publication-website"><a href="{{ website_url | escape }}" target="_blank" rel="noopener">{{ website_label | escape }}</a></p>
         {% endif %}
-        {% if page.paperurl %}        
-        &nbsp or you can find it online <a href="{{ page.paperurl }}" target="_blank">here</a>. 
-        {% endif %}       
+
+        {% if download_url != '' %}
+          <img src="../images/user/flashingArrowGif.gif" alt="" style="height:20px">&nbsp;<a href="{{ download_url | escape }}" download>Click here for download</a>&nbsp;<img src="../images/user/flashingArrowGif.gif" alt="" style="height:20px; transform: rotate(180deg)">
+        {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>

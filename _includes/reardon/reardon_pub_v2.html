@@ -1,0 +1,43 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+{% if post.bestPaper == 1 or post.otherAward == 1 %}
+<div class="publication-awards-v2" style="position:absolute; top:8px; left:12px; transform:translateY(-100%); display:flex; gap:0.25em; font-size:1.35em; line-height:1.2; white-space:nowrap">
+  {% if post.bestPaper == 1 %}
+  <span role="img" aria-label="Best paper award" title="Best paper award" style="display:block; flex:none; width:1.2em; text-align:center">🏆</span>
+  {% endif %}
+  {% if post.otherAward == 1 %}
+  <span role="img" aria-label="Other award" title="Other award" style="display:block; flex:none; width:1.2em; text-align:center">🏅</span>
+  {% endif %}
+</div>
+{% endif %}
+
+  <article class="archive__item publication-content-v2" style="display:grid; grid-template-rows:auto 1fr auto; align-content:stretch; flex:1; min-width:0; width:100%; margin:0; overflow-wrap:anywhere" itemscope itemtype="http://schema.org/CreativeWork">
+    <div class="archive__item-title" style="align-self:start; margin:0; text-align:center; width:100%; font-size:18px" itemprop="headline">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    </div>
+
+    <div class="publication-image-v2" style="display:flex; justify-content:center; align-items:center; min-width:0; padding:15px 0 10px">
+      {% if post.coverImage %}
+      <img src="{{ post.coverImage }}" alt="Feature Image" style="display:block; max-height:200px; max-width:100%; height:auto; width:auto; box-shadow:0 0 4px 1px rgb(100,100,100);" />
+      {% elsif include.type == "grid" and teaser %}
+      <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="" style="display:block; max-height:200px; max-width:100%; height:auto; width:auto;" />
+      {% endif %}
+    </div>
+
+    <div class="publication-details-v2" style="align-self:end; display:flex; flex-direction:column; width:100%; margin:0; font-size:16px">
+      <div>{{post.shortAuthors}} ({{post.year}})</div>
+      <div><i>{{post.venue}}</i></div>
+    </div>
+  </article>

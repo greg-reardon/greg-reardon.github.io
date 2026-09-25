@@ -32,24 +32,4 @@ its research_areas front matter setting for the expanded splash.
   .research-areas--compact .research-areas__topics { --topic-gap: 32px; row-gap: 8px; }
   .research-areas--compact .research-areas__topics li { font-size: clamp(16px, 1.3vw, 19px); }
 </style>
-<script>
-  (function () {
-    var topics = document.querySelector('.research-areas__topics');
-    if (!topics) return;
-    function updateSeparators() {
-      var previousCenter = null;
-      Array.prototype.forEach.call(topics.children, function (item) {
-        var bounds = item.getBoundingClientRect();
-        // Flex items share a vertical center even when a long topic spans two lines.
-        var center = bounds.top + bounds.height / 2;
-        var separator = item.querySelector('.research-areas__separator');
-        if (separator) separator.hidden = previousCenter === null || Math.abs(center - previousCenter) > 2;
-        previousCenter = center;
-      });
-    }
-    updateSeparators();
-    window.addEventListener('resize', updateSeparators);
-    if (window.ResizeObserver) new ResizeObserver(updateSeparators).observe(topics);
-    if (document.fonts) document.fonts.ready.then(updateSeparators);
-  }());
-</script>
+<script src="{{ '/assets/js/research-areas.js' | relative_url }}" defer></script>

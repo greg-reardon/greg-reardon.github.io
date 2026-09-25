@@ -1,7 +1,7 @@
 ---
 title: "SkinSource: A Data-Driven Toolbox for Predicting Touch-Elicited Vibrations in the Upper Limb"
 authors: 'Neeli Tummala*, Gregory Reardon*, Simone Fani, Dustin Goetz, Matteo Bianchi, and Yon Visell'
-shortAuthors: Tummala, Reardon, Fani, Goetz, Bianchi, Visell
+shortAuthors: Tummala*, Reardon*, Fani, Goetz, Bianchi, Visell
 venue: 'IEEE Haptics Symposium'
 year: 2024
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/10520852'

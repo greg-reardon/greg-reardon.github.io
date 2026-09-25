@@ -2,6 +2,17 @@
    MASTHEAD
    ========================================================================== */
 
+.masthead .greedy-nav a.is-active {
+  color: #283e49;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+
+  &::before {
+    display: none;
+  }
+}
+
 .masthead {
   position: relative;
   border-bottom: 1px solid $border-color;

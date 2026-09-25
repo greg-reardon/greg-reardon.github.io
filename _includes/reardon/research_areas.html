@@ -1,0 +1,55 @@
+{% comment %}
+Shared research splash. Edit topics in _data/research_areas.yml.
+The default layout requests compact mode on inner pages. The homepage uses
+its research_areas front matter setting for the expanded splash.
+{% endcomment %}
+{% assign research_areas_mode = include.mode | default: page.research_areas %}
+<section class="research-areas{% if research_areas_mode == 'compact' %} research-areas--compact{% endif %}" aria-label="Research areas">
+  <div class="research-areas__inner">
+    {% unless research_areas_mode == 'compact' %}<h2 class="research-areas__label">Research areas</h2>{% endunless %}
+    <ul class="research-areas__topics" role="list">
+      {% for area in site.data.research_areas %}
+        <li>{% unless forloop.first %}<span class="research-areas__separator" aria-hidden="true"></span>{% endunless %}<span>{{ area | escape }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<style>
+  .research-areas { background: #f3f4f5; border-bottom: 1px solid #e2e6e8; }
+  .research-areas__inner { max-width: 1200px; margin: 0 auto; padding: 6px 1em 30px; box-sizing: border-box; text-align: center; }
+  .research-areas .research-areas__label { margin: 0 0 14px; padding: 0; border: 0; color: #58666d; font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: .16em; text-transform: uppercase; }
+  .research-areas .research-areas__topics { --topic-gap: 56px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px var(--topic-gap); margin: 0; padding: 0; list-style: none; }
+  .research-areas__topics li { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0; padding: 0; color: #283e49; font-size: clamp(22px, 1.8vw, 28px); font-weight: 600; line-height: 1.35; text-wrap: balance; }
+  .research-areas__separator { position: absolute; top: 50%; left: calc(var(--topic-gap) / -2); transform: translate(-50%, -50%); display: block; width: 5px; height: 5px; border-radius: 50%; background: #000; }
+  .research-areas__separator[hidden] { display: none; }
+  @media (min-width: 1800px) { .research-areas__inner { max-width: 1800px; } }
+  @media (max-width: 600px) {
+    .research-areas__inner { padding-top: 10px; padding-bottom: 24px; }
+    .research-areas .research-areas__topics { --topic-gap: 44px; }
+    .research-areas__topics li { font-size: 20px; }
+  }
+  .research-areas--compact .research-areas__inner { padding-top: 12px; padding-bottom: 12px; }
+  .research-areas--compact .research-areas__topics { --topic-gap: 32px; row-gap: 8px; }
+  .research-areas--compact .research-areas__topics li { font-size: clamp(16px, 1.3vw, 19px); }
+</style>
+<script>
+  (function () {
+    var topics = document.querySelector('.research-areas__topics');
+    if (!topics) return;
+    function updateSeparators() {
+      var previousCenter = null;
+      Array.prototype.forEach.call(topics.children, function (item) {
+        var bounds = item.getBoundingClientRect();
+        // Flex items share a vertical center even when a long topic spans two lines.
+        var center = bounds.top + bounds.height / 2;
+        var separator = item.querySelector('.research-areas__separator');
+        if (separator) separator.hidden = previousCenter === null || Math.abs(center - previousCenter) > 2;
+        previousCenter = center;
+      });
+    }
+    updateSeparators();
+    window.addEventListener('resize', updateSeparators);
+    if (window.ResizeObserver) new ResizeObserver(updateSeparators).observe(topics);
+    if (document.fonts) document.fonts.ready.then(updateSeparators);
+  }());
+</script>

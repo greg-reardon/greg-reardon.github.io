@@ -1,5 +1,5 @@
 ---
-title: "Biomechanical filtering supports efficient tactile encoding in the human hand"
+title: "Biomechanical Filtering Supports Efficient Tactile Encoding in the Human Hand"
 authors: 'Neeli Tummala, Gregory Reardon, Bharat Dandu, Yitian Shao, Hannes P. Saal, and Yon Visell'
 shortAuthors: Tummala, Reardon, Dandu, Shao, Saal, Visell
 venue: 'Journal of the Royal Society Interface'

@@ -1,9 +1,10 @@
 ---
 layout: archive
-title: "Select Publications"
-permalink: /publications_v2/
+title: "Selected Publications"
+permalink: /publications/
 author_profile: true
-googlescholar: https://scholar.google.com/citations?hl=en&user=VEdujacAAAAJ
+research_areas: compact
+googlescholar: https://scholar.google.com/citations?user=JQDPQpkAAAAJ&hl=en&oi=ao
 ---
 
 {% include base_path %}
@@ -13,10 +14,11 @@ googlescholar: https://scholar.google.com/citations?hl=en&user=VEdujacAAAAJ
 
 {% if post.show == true %}
 
-<div class="publication-card-v2" style="display:flex; position:relative; align-items:stretch; flex-shrink:4; min-width:0; max-width:450px; background-color:rgb(245, 245, 245); box-shadow:0 0 4px #ccc; padding:15px; margin:20px; border-radius:25px; flex-basis:300px; flex-grow:2">
+{% comment %}Previous card fill: #efefef (rgb(239, 239, 239)).{% endcomment %}
+<a class="publication-card-v2" href="{{ post.url | relative_url }}" aria-label="{{ post.title | strip_html | escape }}" style="display:flex; position:relative; align-items:stretch; flex-shrink:4; min-width:0; max-width:450px; background-color:#fff; box-sizing:border-box; padding:15px; margin:20px; border-radius:14px; flex-basis:300px; flex-grow:2">
 
   {% include reardon/reardon_pub_v2.html %}
-</div>
+</a>
 
 {% endif %}
 {% endfor %}

@@ -3,7 +3,9 @@ permalink: /
 title: ""
 excerpt: "About me"
 author_profile: true
-cvLink: "../papers/Reardon_CV.pdf"
+publication_banner: true
+research_areas: true
+cvLink: "../papers/Reardon_CV_Redacted.pdf"
 redirect_from: 
   - /about/
   - /about.html
@@ -11,17 +13,17 @@ redirect_from:
 
 {% include base_path %}
 
-I am a postdoctoral researcher in the Mechanical Engineering Department at Northwestern University, working with [Profs. J. Edward Colgate and Michael Peshkin](https://sites.northwestern.edu/hapticsgroup/){:target="_blank" rel="noopener"}. My research centers on developing innovative sensing and actuation devices for haptics, human-computer interaction, and robotics. My work has earned five best paper awards and nominations at premier IEEE venues and has been featured in top interdisciplinary engineering journals including *Science Robotics* and *Science Advances*.
+I am a postdoctoral researcher in the Mechanical Engineering Department at Northwestern University, working with [Profs. J. Edward Colgate and Michael Peshkin](https://sites.northwestern.edu/hapticsgroup/){:target="_blank" rel="noopener"}. My research centers on developing innovative sensing and actuation devices for haptics, robotics, and human-computer interaction. My work has earned five best paper awards and nominations at premier IEEE venues and has been featured in top interdisciplinary engineering journals including *Science Robotics* and *Science Advances*.
 
 Prior to working at Northwestern, I completed my Ph.D. at the University of California, Santa Barbara, under the direction of [Prof. Yon Visell](http://www.re-touch-lab.com/){:target="_blank" rel="noopener"}. My dissertation work was internationally recognized by the EuroHaptics Society as the *Best Ph.D. Thesis* in the field of haptics for 2024. Before moving into haptics, I contributed to research on spatial audio rendering, perception, and evaluation at the [Music and Auditory Research Lab](https://steinhardt.nyu.edu/marl){:target="_blank" rel="noopener"} at New York University, where I received a master's degree in Music Technology.
 
 # Research Overview
-The capture and reproduction of visual and auditory information fundamentally changed how we interact with the world. Advances in capturing and reproducing touch information could drive a similar transformation in robotics and human-computer interaction, while deepening our understanding of how we interact physically with the world. My research interests center on advancing touch-based technologies, designing new sensing and actuation devices to shape what this future looks and ***feels*** like. I design tactile sensors to enhance robotic dexterity, investigate the science of dexterous manipulation, and provide insights that guide the design of haptic feedback. I also design haptic displays to reproduce captured touch information, expand the expressiveness of consumer technologies like touchscreens, and discover the limits of touch perception.
-   
+Capturing and reproducing visual and auditory information fundamentally changed how we interact with the world. Advances in capturing and reproducing touch information could drive a similar transformation in robotics and human-computer interaction, while deepening our understanding of how we interact physically with the world. My research centers on advancing touch-based technologies, with the goal of shaping what this future looks and ***feels*** like. I develop tactile sensors to enhance robotic dexterity, investigate the science of dexterous manipulation, and identify principles for haptic feedback design; I create haptic displays to reproduce captured touch information, expand the expressiveness of consumer technologies like touchscreens, and discover the limits of touch perception.
+  
 
 
-<!--
-
+{% comment %}
+%designing new sensing and actuation devices to
 
 I design tactile sensors that capture touch information to enable robot dexterity, investigate the science of dexterous manipulation, and . I also design haptic displays to reproduce captured touch information, expand the expressiveness of consumer technologies like touchscreens, and discover the limits of touch perception.
 
@@ -77,11 +79,11 @@ I have contributed to academic research on the auditory and haptic senses to inf
 My research interests include haptic science and engineering at the intersection of mechanics, computation, and perception. My current research focuses on controlling the propagation of mechanical waves for rendering new forms of vibration feedback on touch surfaces. I use the tools I have gained from my varied academic background to engineer novel haptic devices, develop algorithms for rendering touch feedback, and design perception studies for evaluating sensations.
 
 
--->
+{% endcomment %}
 
 
 <p>
-<img src="../images/user/flashingArrowGif.gif" style="height:20px"> <a href="{{ page.cvLink }}" download target="_blank" rel="noopener">Click here to download my CV</a> <img src="../images/user/flashingArrowGif.gif" style="height:20px; transform: rotate(180deg)">
+<a class="btn" href="{{ page.cvLink }}" download target="_blank" rel="noopener">Download CV</a>
 </p>
 
 
@@ -92,18 +94,18 @@ My research interests include haptic science and engineering at the intersection
 {{ news | markdownify }}
 </div>
 
-<!--
+{% comment %}
 March 2022 - Smart Bracelet
 
 July 2021 - My co-author Anzu Kawazoe had her work Tactile Echoes
--->
+{% endcomment %}
 
-<!--
+{% comment %}
 July 2023 - My co-author Neeli Tummala was awarded a Best Presentation Award at the 2023 Festival of Touch for her research Biomechanical Filtering diversifies whole-hand tactile encoding.
--->
+{% endcomment %}
 
 
-<!--
+{% comment %}
 This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io){:target="_blank" rel="noopener"} and hosted on GitHub pages. [GitHub pages](https://pages.github.com){:target="_blank" rel="noopener"} is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/){:target="_blank" rel="noopener"} created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io){:target="_blank" rel="noopener"} right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com){:target="_blank" rel="noopener"}, which uses [this Github repository](https://github.com/staeiou/staeiou.github.io){:target="_blank" rel="noopener"}.
 
 A data-driven personal website
@@ -144,4 +146,4 @@ Example: editing a markdown file for a talk
 For more info
 ------
 More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/){:target="_blank" rel="noopener"}. The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/){:target="_blank" rel="noopener"} (which this theme was forked from) might also be helpful.
--->
+{% endcomment %}

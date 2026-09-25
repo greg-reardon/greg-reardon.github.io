@@ -13,7 +13,7 @@ otherAward: 1
 show: true
 downloadLink: '../papers/Reardon_DynamicSourceMotion.pdf'
 awards: |
-  🏆 <u>Best Transactions on Haptics Short Paper</u>, <i>2023 IEEE World Haptics Conference</i><br>
+  🏆 <u>Best Transactions on Haptics Short Journal Paper</u>, <i>2023 IEEE World Haptics Conference</i><br>
   🏅 <u>Best Student Presentation Award Finalist</u>, <i>2023 IEEE World Haptics Conference</i>
 ---
 

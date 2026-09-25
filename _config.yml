@@ -88,6 +88,7 @@ author:
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=JQDPQpkAAAAJ&hl=en"
+  cv               : "/papers/Reardon_CV_Redacted.pdf"
   email            : gregory.reardon@northwestern.edu
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -124,6 +125,8 @@ include:
   - _pages
   - files
 exclude:
+  - "archive/**"
+  - _pages/news_v2.md
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

@@ -1,6 +1,6 @@
 {% include base_path %}
 
-<!-- begin SEO -->
+{% comment %} begin SEO {% endcomment %}
 {% if site.url %}
   {% assign seo_url = site.url | append: site.baseurl %}
 {% endif %}
@@ -136,4 +136,4 @@
 {% if site.yandex_site_verification %}
   <meta name="yandex-verification" content="{{ site.yandex_site_verification }}">
 {% endif %}
-<!-- end SEO -->
+{% comment %} end SEO {% endcomment %}

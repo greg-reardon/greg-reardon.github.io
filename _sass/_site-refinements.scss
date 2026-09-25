@@ -1,0 +1,56 @@
+// Previous card highlight: $link-color (#326585).
+$publication-card-highlight: #800020;
+
+.publication-card-v2 {
+  border: 2px solid #bfc5ca;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(30,45,55,.08), 0 8px 20px rgba(30,45,55,.12);
+  transition: box-shadow 180ms ease, border-color 180ms ease;
+
+  &:focus-within {
+    border-color: $publication-card-highlight;
+    box-shadow: 0 5px 10px rgba(30,45,55,.14), 0 12px 28px rgba(30,45,55,.22);
+  }
+}
+
+.archive a.publication-card-v2 {
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover { text-decoration: none; }
+  &:focus-visible { outline: 2px solid $publication-card-highlight; outline-offset: 3px; }
+  img { box-shadow: none; }
+}
+
+@media (hover: hover) {
+  .publication-card-v2:hover {
+    border-color: $publication-card-highlight;
+    box-shadow: 0 5px 10px rgba(30,45,55,.14), 0 12px 28px rgba(30,45,55,.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .publication-card-v2 { transition: none; }
+}
+
+.collaborator-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 2em;
+  margin-top: 1.5em;
+
+  > .list__item {
+    min-width: 0;
+    padding: .85em 0;
+    border-bottom: 1px solid #e2e6e8;
+  }
+
+  p { margin: 0; }
+
+  &__name { display: block; font-weight: 600; }
+  &__affiliation { display: block; margin-top: .2em; font-size: .9em; color: #596168; }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -25,12 +25,12 @@
 
   <article class="archive__item publication-content-v2" style="display:grid; grid-template-rows:auto 1fr auto; align-content:stretch; flex:1; min-width:0; width:100%; margin:0; overflow-wrap:anywhere" itemscope itemtype="http://schema.org/CreativeWork">
     <div class="archive__item-title" style="align-self:start; margin:0; text-align:center; width:100%; font-size:18px" itemprop="headline">
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {{ title }}
     </div>
 
     <div class="publication-image-v2" style="display:flex; justify-content:center; align-items:center; min-width:0; padding:15px 0 10px">
       {% if post.coverImage %}
-      <img src="{{ post.coverImage }}" alt="Feature Image" style="display:block; max-height:200px; max-width:100%; height:auto; width:auto; box-shadow:0 0 4px 1px rgb(100,100,100);" />
+      <img src="{{ post.coverImage }}" alt="Feature Image" style="display:block; max-height:200px; max-width:100%; height:auto; width:auto;" />
       {% elsif include.type == "grid" and teaser %}
       <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="" style="display:block; max-height:200px; max-width:100%; height:auto; width:auto;" />
       {% endif %}

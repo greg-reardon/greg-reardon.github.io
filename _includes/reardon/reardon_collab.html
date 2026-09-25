@@ -27,12 +27,14 @@
     {% endif %}
 
     <p>
+        <span class="collaborator-list__name">
         {% if post.website %}
             <a href="{{ post.website }}" target="_blank">{{ post.name }}</a>
         {% else %}
             {{ post.name }}
         {% endif %}
-        - {{ post.affiliation }}
+        </span>
+        <span class="collaborator-list__affiliation">{{ post.affiliation }}</span>
     </p>
 
     </article>

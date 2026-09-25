@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Select Publications"
-permalink: /publications/
+permalink: /publications_old/
 author_profile: true
 googlescholar: https://scholar.google.com/citations?hl=en&user=VEdujacAAAAJ
 ---

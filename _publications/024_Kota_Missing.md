@@ -1,7 +1,7 @@
 ---
 title: "The Missing Touch: Spatially Distributed Tactile Feedback Brings Teleoperation Closer to Human Dexterity"
 authors: 'Rohan Kota, Gregory Reardon*, J. Edward Colgate*'
-shortAuthors: Kota, Reardon, Colgate
+shortAuthors: Kota, Reardon*, Colgate*
 venue: 'arXiv (preprint)'
 year: 2026
 paperurl: 'https://arxiv.org/abs/2608.19372'

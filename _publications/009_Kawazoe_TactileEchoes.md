@@ -1,8 +1,8 @@
 ---
 title: "Tactile Echoes: Multisensory Augmented Reality for the Hand"
-authors: 'Anzu Kawazoe, Greg Reardon, Erin Woo, Massimiliano Di Luca, and Yon Visell'
+authors: 'Anzu Kawazoe, Gregory Reardon, Erin Woo, Massimiliano Di Luca, and Yon Visell'
 shortAuthors: Kawazoe, Reardon, Woo, Di Luca, Visell
-venue: 'IEEE Transacations on Haptics'
+venue: 'IEEE Transactions on Haptics'
 year: 2022
 paperurl: 'https://ieeexplore.ieee.org/document/9442315'
 coverImage: '../images/user/Kawazoe_TactileEchoes.png'

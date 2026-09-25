@@ -1,0 +1,108 @@
+{% comment %}
+Self-contained publication image banner. Enable with publication_banner: true
+in a page's front matter; remove that setting or set it to false to disable.
+Uses the same show/coverImage fields as the Publications page, newest first.
+Banner-only crop settings live in _data/publication_banner.yml.
+Regenerate images/banner thumbnails with scripts/export-banner-thumbnails.ps1 after crop changes.
+{% endcomment %}
+{% assign banner_papers = site.publications | where: 'show', true | reverse %}
+<div class="publication-banner-shell">
+<section class="publication-banner" aria-label="Research publication images" aria-roledescription="carousel">
+  <button class="publication-banner__arrow" type="button" data-banner-prev aria-label="Previous publication images" aria-controls="publication-banner-track" hidden>&#8249;</button>
+  <div class="publication-banner__track" id="publication-banner-track" tabindex="0" aria-label="Publication images; scroll to browse">
+    {% for paper in banner_papers %}
+      {% if paper.coverImage %}
+        {% assign banner_image = paper.coverImage %}
+        {% unless banner_image contains '://' %}
+          {% assign banner_image = banner_image | remove_first: '../' | relative_url %}
+        {% endunless %}
+        {% assign banner_title = paper.title | strip_html | escape %}
+        {% assign banner_filename = paper.coverImage | split: '/' | last %}
+        {% assign banner_crop = site.data.publication_banner[banner_filename] %}
+        {% assign banner_thumbnail = banner_filename | replace: '.png', '.jpg' | prepend: '/images/banner/' %}
+        {% assign banner_thumbnail_files = site.static_files | where: 'path', banner_thumbnail %}
+        {% if banner_thumbnail_files.size > 0 %}
+          {% assign banner_image = banner_thumbnail | relative_url %}
+          {% assign banner_crop = nil %}
+        {% endif %}
+        <a class="publication-banner__image" href="{{ paper.url | relative_url }}" title="{{ banner_title }}" style="--banner-fit: {{ banner_crop.fit | default: 'cover' }}; --banner-position: {{ banner_crop.position | default: '50% 50%' }}; --banner-zoom: {{ banner_crop.zoom | default: 1 }}; --banner-origin: {{ banner_crop.origin | default: '50% 50%' }};">
+          <img src="{{ banner_image }}" alt="{{ banner_title }}" loading="eager" decoding="async" width="900" height="600">
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <button class="publication-banner__arrow" type="button" data-banner-next aria-label="Next publication images" aria-controls="publication-banner-track" hidden>&#8250;</button>
+</section>
+</div>
+<style>
+  .publication-banner-shell { background: #f3f4f5; }
+  .publication-banner { display: flex; align-items: center; gap: 12px; max-width: 1200px; margin: 0 auto; padding: 24px 1em 20px; box-sizing: border-box; }
+  .publication-banner__track { display: flex; flex: 1; min-width: 0; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #b9bec3 #f3f4f5; scroll-behavior: smooth; padding: 4px 2px 8px; }
+  .publication-banner__image { position: relative; display: block; flex: 0 0 calc((100% - 48px) / 4); aspect-ratio: 3 / 2; min-width: 0; overflow: hidden; background: #fff; border: 0; box-sizing: border-box; border-radius: 12px; scroll-snap-align: start; }
+  .publication-banner__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; object-fit: var(--banner-fit); object-position: var(--banner-position); transform: scale(var(--banner-zoom)); transform-origin: var(--banner-origin); }
+  .publication-banner__arrow { flex: 0 0 36px; width: 36px; height: 44px; margin: 0; padding: 0; border: 1px solid #d5d9dd; border-radius: 6px; background: #f3f4f5; color: #596168; font: 32px/1 sans-serif; cursor: pointer; }
+  .publication-banner__arrow[hidden] { display: none; }
+  .publication-banner__arrow:disabled { opacity: .3; cursor: default; }
+  .publication-banner__arrow:not(:disabled):hover { background: #e4e7ea; }
+  .publication-banner a:focus-visible, .publication-banner button:focus-visible, .publication-banner__track:focus-visible { outline: 2px solid #2879a5; outline-offset: 2px; }
+  @media (min-width: 1800px) { .publication-banner { max-width: 1800px; } }
+  @media (max-width: 1100px) { .publication-banner__image { flex-basis: calc((100% - 32px) / 3); } }
+  @media (max-width: 760px) { .publication-banner__image { flex-basis: calc((100% - 16px) / 2); } }
+  @media (max-width: 480px) { .publication-banner { gap: 8px; padding: 18px 1em 14px; } .publication-banner__image { flex-basis: 100%; } }
+  @media (prefers-reduced-motion: reduce) { .publication-banner__track { scroll-behavior: auto; } }
+</style>
+<script>
+  (function () {
+    var banner = document.querySelector('.publication-banner');
+    if (!banner) return;
+    var track = banner.querySelector('.publication-banner__track');
+    var previous = banner.querySelector('[data-banner-prev]');
+    var next = banner.querySelector('[data-banner-next]');
+    var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var paused = motion.matches;
+    var hovered = false;
+    var timer;
+    if (!track.children.length) { banner.parentElement.hidden = true; return; }
+    previous.hidden = false;
+    next.hidden = false;
+    function schedule() {
+      window.clearTimeout(timer);
+      if (paused || hovered || document.hidden || track.scrollWidth <= track.clientWidth + 2) return;
+      timer = window.setTimeout(function () { advance(1); }, 4000);
+    }
+    function update() {
+      previous.disabled = next.disabled = track.scrollWidth <= track.clientWidth + 2;
+      schedule();
+    }
+    function advance(direction) {
+      var styles = window.getComputedStyle(track);
+      var step = track.children[0].getBoundingClientRect().width + parseFloat(styles.columnGap);
+      // Snap positions include track padding; allow for that plus pixel rounding.
+      var startTolerance = (parseFloat(styles.paddingLeft) || 0) + 2;
+      var endTolerance = (parseFloat(styles.paddingRight) || 0) + 2;
+      var end = Math.max(0, track.scrollWidth - track.clientWidth);
+      var target = track.scrollLeft + direction * step;
+      if (direction > 0 && track.scrollLeft >= end - endTolerance) target = 0;
+      if (direction < 0 && track.scrollLeft <= startTolerance) target = end;
+      track.scrollTo({ left: Math.max(0, Math.min(end, target)), behavior: 'auto' });
+      update();
+    }
+    previous.addEventListener('click', function () { advance(-1); });
+    next.addEventListener('click', function () { advance(1); });
+    banner.addEventListener('mouseenter', function () { hovered = true; schedule(); });
+    banner.addEventListener('mouseleave', function () { hovered = false; schedule(); });
+    document.addEventListener('visibilitychange', schedule);
+    motion.addEventListener('change', function () { paused = motion.matches; schedule(); });
+    track.addEventListener('keydown', function (event) {
+      if (event.target !== track) return;
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        advance(event.key === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    if (window.ResizeObserver) new ResizeObserver(update).observe(track);
+    update();
+  }());
+</script>

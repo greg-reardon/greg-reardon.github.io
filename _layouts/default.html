@@ -11,7 +11,7 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-<!--
+{% comment %}
 <style>
   body{
     background-image: url('{{ site.baseurl }}/images/user/Reardon_websiteProfile.jpg');
@@ -19,11 +19,20 @@ layout: compress
 
   }
 </style>
--->
+{% endcomment %}
 
   <body>
     {% include browser-upgrade.html %}
     {% include masthead.html %}
+    {% unless page.url == '/' %}
+      {% include reardon/research_areas.html mode='compact' %}
+    {% endunless %}
+    {% if page.publication_banner %}
+      {% include reardon/publication_banner.html %}
+    {% endif %}
+    {% if page.url == '/' and page.research_areas %}
+      {% include reardon/research_areas.html %}
+    {% endif %}
 
     {{ content }}
 

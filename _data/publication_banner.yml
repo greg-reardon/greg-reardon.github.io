@@ -1,0 +1,33 @@
+# Banner-only framing; the original publication images are never modified.
+# fit: contain preserves annotated figures; cover fills the 3:2 frame.
+# position and zoom adjust the focal point inside the clipped frame.
+Kota_Missing.png:
+  fit: contain
+Reardon_Metawave.png:
+  position: '35% 50%'
+Trzpit_NURing.png:
+  fit: contain
+Tummala_Biomechanical.png:
+  position: '50% 48%'
+Kota_3DCal.png:
+  position: '50% 68%'
+Linnander_Projected.png:
+  position: '0% 50%'
+  zoom: 1.6
+  origin: '0% 50%'
+Tummala_SkinSource.png:
+  fit: contain
+Reardon_DynamicSourceMotion.png:
+  fit: contain
+Reardon_ShearShockWaves.png:
+  position: '50% 52%'
+Kastor_Ferrofluid.png:
+  position: '50% 58%'
+Dinulescu_SmartBracelet.png:
+  position: '38% 50%'
+Kawazoe_TactileEchoes.png:
+  fit: contain
+Reardon_Elastowave.png:
+  position: '50% 62%'
+Hachisu_Interpersonal.png:
+  fit: contain

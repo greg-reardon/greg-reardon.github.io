@@ -48,7 +48,11 @@ Regenerate images/banner thumbnails with scripts/export-banner-thumbnails.ps1 af
   @media (min-width: 1800px) { .publication-banner { max-width: 1800px; } }
   @media (max-width: 1100px) { .publication-banner__image { flex-basis: calc((100% - 32px) / 3); } }
   @media (max-width: 760px) { .publication-banner__image { flex-basis: calc((100% - 16px) / 2); } }
-  @media (max-width: 480px) { .publication-banner { gap: 8px; padding: 18px 1em 14px; } .publication-banner__image { flex-basis: 100%; } }
+  @media (max-width: 480px) {
+    .publication-banner { gap: 8px; padding: 18px 12px 14px; }
+    .publication-banner__track { gap: 8px; }
+    .publication-banner__image { flex-basis: calc((100% - 8px) / 2); }
+  }
   @media (prefers-reduced-motion: reduce) { .publication-banner__track { scroll-behavior: auto; } }
 </style>
 <script src="{{ '/assets/js/publication-banner.js' | relative_url }}" defer></script>

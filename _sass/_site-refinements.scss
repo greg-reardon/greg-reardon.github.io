@@ -1,6 +1,46 @@
 // Previous card highlight: $link-color (#326585).
 $publication-card-highlight: #800020;
 
+// Keep contact links beneath the biography when the sidebar becomes a header.
+.author__urls-wrapper { cursor: default; }
+.author__urls {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: auto;
+
+  &::before, &::after { display: none; }
+}
+
+@media (max-width: ($large - 1px)) {
+  .author__profile {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 15px;
+    align-items: start;
+  }
+
+  .author__profile > .author__avatar {
+    grid-row: 1 / span 2;
+    display: block;
+    width: 64px;
+  }
+
+  .author__content { display: block; padding: 0; }
+  .author__urls-wrapper { display: block; grid-column: 2; margin-top: 8px; }
+  .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+
+    a { margin: 0; padding: 3px 0; }
+  }
+}
+
 .publication-card-v2 {
   border: 2px solid #bfc5ca;
   cursor: pointer;

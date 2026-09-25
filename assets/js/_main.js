@@ -36,11 +36,9 @@ $(document).ready(function(){
       // fix
       Stickyfill.rebuild();
       Stickyfill.init();
-      $(".author__urls").show();
     } else {
       // unfix
       Stickyfill.stop();
-      $(".author__urls").hide();
     }
   };
 
@@ -48,13 +46,6 @@ $(document).ready(function(){
 
   $(window).resize(function(){
     stickySideBar();
-  });
-
-  // Follow menu drop down
-
-  $(".author__urls-wrapper button").on("click", function() {
-    $(".author__urls").fadeToggle("fast", function() {});
-    $(".author__urls-wrapper button").toggleClass("open");
   });
 
   // init smooth scroll
